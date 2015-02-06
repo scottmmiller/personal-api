@@ -29,6 +29,8 @@ returns: Your past occupations as an array in a JSON object
 ####`GET /occupations/latest`
 returns: The last/current job you have/had. The occupations will be stored in an array, but this method returns the last item of the array in a JSON reponse
 
+***********************************************
+
 ###Step 3: Add ordering to your API
 For the hobbies and occupations endpoints, let's have a way for the client to get a specific ordering, alphabetized or reverse alphabetized.
 * Make it so when the client requests occupations or hobbies with a order query parameter, return an alphabetized list for order=desc and a reverse alphabetized list for order=asc (if your hobbies/occupations endpoints are arrays of strings, you can simply use the Javascript `.sort()` and `.reverse()` methods of an array to do your sorting)
