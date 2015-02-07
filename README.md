@@ -68,12 +68,14 @@ This endpoint is going to be a bit more complicated than those you've made previ
 ####`GET /skills`
 purpose: retrieve the list of skills
 
-Also, allow a 'experience' query parameter so that someone can retrieve a list of skills that match a certain level of experience, like so:
+Also, allow an 'experience' query parameter so that someone can retrieve a list of skills that match a certain level of experience, like so:
 
 `GET /skills?experience=Intermediate`
 
 ####`POST /skills`
 purpose: add a skill to the collection of skills
+
+*************************************************
 
 ###Step 6: Create a simple Angular app for your API
 * In a separate directory, create an Angular Application
@@ -82,4 +84,4 @@ purpose: add a skill to the collection of skills
   * `/me` detailed information about you: hobbies, occupations, mentions and friends
   * `/skills` page that displays your skills
 * Create a service that handles the network requests (hint: you could create a method for each endpoint, or you could consolidate some into the same method)
-* If you've arrive this far, go ahead and make some text inputs and add the logic necessary to edit or add to any of the "writeable" endpoints.
+* If you've arrived this far, go ahead and make some text inputs and add the logic necessary to edit or add to any of the "writeable" endpoints.
