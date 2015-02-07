@@ -49,6 +49,8 @@ purpose: Add a name to a list of names that would serve as personal references.
 ####`POST /references`
 purpose: add to list of references
 
+******************************************
+
 ###Step 5: Create skills endpoint
 This endpoint is going to be a bit more complicated than those you've made previously. For skills, we need to store a more complicated data structure. Here's how your skill could be structured:
 
