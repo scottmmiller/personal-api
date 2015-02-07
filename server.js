@@ -18,6 +18,7 @@ var userData = {
 app.listen(port);
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -41,13 +42,25 @@ app.get('/location', function(req, res) {
 
 app.get('/hobbies', function(req, res) {
 	// res.type('application/json');
-	return res.json(userData.hobbies)
+	if(req.query.order === 'desc') {
+		return res.json(userData.hobbies.sort());
+	} else if (req.query.order === 'asc') {
+		return res.json(userData.hobbies.reverse());
+	} else {
+		return res.json(userData.hobbies);
+	}
 });
 
 
 app.get('/occupations', function(req, res) {
 	// res.type('application/json');
-	return res.json(userData.occupations)
+	if(req.query.order === 'desc') {
+		return res.json(userData.occupations.sort());
+	} else if(req.query.order === 'asc') {
+		return res.json(userData.occupations.reverse());
+	} else {
+		return res.json(userData.occupations);
+	}
 });
 
 
@@ -63,6 +76,6 @@ app.get('/occupations/latest', function(req, res) {
 			//PUTs
 app.put('/location', function(req, res) {
 	// res.type('application/json');
-
-	return res.json(userData.location)
+	newLocation = userData.location.city + ", " + userData.location.state;
+	return res.json(newLocation)
 });
