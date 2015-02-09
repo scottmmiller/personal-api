@@ -11,7 +11,7 @@ var userData = {
 		city: "Kaysville",
 		state: "UT"
 		},
-	hobbies: ["JavaScript", "Angular", "Firebase", "NodeJS", "MongoDB"],
+	hobbies: ["FAMILY", "Athletic Supporter", "Watching Flix", "Laughing", "Observing..."],
 	occupations: ["Cashier", "Tire Installer", "AM Merch", "Customer Service Specialist"],
 	mentions: ['http://www.facebook.com/SkootDiggity', 'https://github.com/scottmmiller', 'http://google.com/+ScottMMiller9'],
 	references: ['Jack R Christianson', 'Andy Lange', 'Luke Johnson', 'Dan Webster'], 
@@ -50,62 +50,62 @@ app.use(function(req, res, next) {
 			//GETs
 app.get('/name', function(req, res) {
 	// res.type('application/json');
-	return res.json(userData.name)
+	return res.send(userData.name)
 });
 
 app.get('/location', function(req, res) {
 	// res.type('application/json');
-	return res.json(userData.location.city + ', ' + userData.location.state)
+	return res.send(userData.location.city + ', ' + userData.location.state)
 });
 
 app.get('/hobbies', function(req, res) {
 	// res.type('application/json');
 	if(req.query.order === 'desc') {
-		return res.json(userData.hobbies.sort());
+		return res.send(userData.hobbies.sort());
 	} else if (req.query.order === 'asc') {
-		return res.json(userData.hobbies.reverse());
+		return res.send(userData.hobbies.reverse());
 	} else {
-		return res.json(userData.hobbies);
+		return res.send(userData.hobbies);
 	}
 });
 
 app.get('/occupations', function(req, res) {
 	// res.type('application/json');
 	if(req.query.order === 'desc') {
-		return res.json(userData.occupations.sort());
+		return res.send(userData.occupations.sort());
 	} else if(req.query.order === 'asc') {
-		return res.json(userData.occupations.reverse());
+		return res.send(userData.occupations.reverse());
 	} else {
-		return res.json(userData.occupations);
+		return res.send(userData.occupations);
 	}
 });
 
 app.get('/occupations/latest', function(req, res) {
 	// res.type('application/json');
 	var latest = userData.occupations[userData.occupations.length - 1];
-	return res.json(latest);
+	return res.send(latest);
 });
 
 app.get('/mentions', function(req, res) {
 	//res.type('application/json');
-	return res.json(userData.mentions);
+	return res.send(userData.mentions);
 });
 
 app.get('/references', function(req, res) {
 	//res.type('application/json');
-	return res.json(userData.references);
+	return res.send(userData.references);
 });
 
 app.get('/skills', function(req, res) {
 	//res.type('application/json');
-	if(req.query.experience === 'Intermediate') {
+	if(req.query.experience) {
 		for(var i = 0; i < userData.skills.length; i++) {
 			if(userData.skills[i].experience === req.query.experience) {
-				return res.json(userData.skills[i]);
+				return res.send(userData.skills[i]);
 			};
 		};
 	};
-	return res.json(userData.skills);
+	return res.send(userData.skills);
 })
 
 
@@ -113,13 +113,13 @@ app.get('/skills', function(req, res) {
 app.post('/mentions', function(req, res) {
 	//res.type('application/json');
 	userData.mentions.push(req.body.mentions);
-	return res.json(userData.mentions);
+	return res.send(userData.mentions);
 });
 
 app.post('/references', function(req, res) {
 	//res.type('applications/json');
 	userData.references.push(req.body.references);
-	return res.json(userData.references);
+	return res.send(userData.references);
 });
 
 app.post('/skills', function(req, res) {
@@ -127,7 +127,7 @@ app.post('/skills', function(req, res) {
 	req.body.skills.id = userData.skills.length + 1;
 	console.log(req.body.skills)
 	userData.skills.push(req.body.skills);
-	return res.json(userData.skills);
+	return res.send(userData.skills);
 });
 
 
@@ -137,7 +137,7 @@ app.post('/skills', function(req, res) {
 app.put('/location', function(req, res) {
 	// res.type('application/json');
 	newLocation = userData.location.city + ", " + userData.location.state;
-	return res.json(newLocation)
+	return res.send(newLocation)
 });
 
 

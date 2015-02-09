@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='meApp' ng-controller='MainCtrlr'>
+	<head>
+		<link rel="stylesheet" href="../templates/styles.css">
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Sue+Ellen+Francisco|Quintessential|The+Girl+Next+Door|Rock+Salt|Nothing+You+Could+Do|Over+the+Rainbow|Loved+by+the+King|Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<header> <h1 class='name'> {{name}} </h1>
+		<h3 class='location'> {{location}} </h3>
+		</header>
+</div>
+		
+<!-- 		<div class='test'> {{test}} </div>
+ -->
+		<div ng-view></div>
+
+		<!-- ANGULAR -->
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js'></script> 
+
+		<!-- CONTROLLERS -->
+		<script src='../app/appModule.js'></script>
+		<script src='../app/controllers/MainCtrlr.js'></script>
+		<script src='../app/controllers/HomeCtrlr.js'></script>
+		<script src='../app/controllers/MeCtrlr.js'></script>
+		<script src='../app/controllers/SkillsCtrlr.js'></script>
+
+		<!-- SERVICES -->
+		<script src='../app/services/meService.js'></script>
+
+	</body>
+</html>

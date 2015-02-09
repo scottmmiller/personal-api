@@ -1,0 +1,45 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 20px;
+}
+
+header {
+	text-align: center;
+}
+
+.name {
+	font-family: 'Rock Salt', cursive;
+	margin-bottom: -10px;
+}
+
+.location {
+	font-family: 'Over the Rainbow', cursive;
+	margin-top: -10px;
+}
+
+.me-header {
+	text-align: center;
+}
+
+.me-displays {
+	margin-left: 10em;
+	margin-right: 10em;
+}
+
+.occupations, .mentions, .hobbies, .friends {
+	display: inline-block;
+	float: left;
+	height: 10em;
+	width: 50%;
+}
+
+.skills-displays {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.test {
+	border: 1px solid black;
+	padding: 1em;
+}

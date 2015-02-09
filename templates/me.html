@@ -1,0 +1,36 @@
+<div ng-controller='MeCtrlr'>
+
+	<h3 class='me-header'> This Is Some Info About Me...</h3>
+	
+	<div class="me-displays">
+		<span class="occupations">
+			<h4> Occupations </h4>
+				<ul>
+					<li ng-repeat='job in occupations'> {{job}} </li>
+				</ul>
+		</span>
+	
+		<span class="mentions">
+			<h4> Mentions </h4>
+				<ul>
+					<li ng-repeat='mention in mentions'> {{mention}} </li>
+				</ul>
+		</span>
+	</div>
+	<div class='me-displays'>
+		<span class="hobbies">
+			<h4> Hobbies </h4>
+				<ul>
+					<li ng-repeat='hobby in hobbies'> {{hobby}} </li>
+				</ul>
+		</span>
+	
+		<span class="friends">
+			<h4> Friends </h4>
+				<ul>
+					<li ng-repeat='friend in references'> {{friend}} </li>
+				</ul>
+		</span>
+	</div>
+
+</div>
